@@ -25,8 +25,8 @@ public class ServerRunnable  implements Runnable{
     }
 
     private void Log(String message) throws FileNotFoundException {
-        PrintWriter printWriter = new PrintWriter(new FileOutputStream("log.txt",true));
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        PrintWriter printWriter = new PrintWriter(new FileOutputStream("serverlog\\log.txt",true));
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
         LocalDateTime actualTime = LocalDateTime.now();
 
         printWriter.print(dateTimeFormatter.format(actualTime) + " - " + message +"\n");
